@@ -1,0 +1,38 @@
+Zainstaluj narzędzia konsolowe Gulp-a globalnie:
+
+npm install gulp-cli -g
+Zauważ, że korzystamy przy instalacji już z managera paczek npm.
+Flaga -g oznacza, że gulp zostanie zainstalowany globalnie.
+Czasami system nie pozwoli nam instalować globalnie paczek, a niestety nie będziemy w stanie skorzystać z nvm (opisywanego przy instalacji Node.js). Pozostaje wtedy użyć powyższego polecenia poprzedzając go słowem sudo czyli:
+sudo npm install gulp-cli -g
+
+Wewnątrz twojego projektu uruchom komendę npm init -y. Dzięki temu zostanie stworzony plik package.json i projekt zostanie zainicjalizowany z podstawowymi ustawieniami.
+Zainstaluj gulp-a również lokalnie wewnątrz Twojego projektu. W związku z tym wejdź do głównego katalogu repozytorium z zadaniami i wpisz w terminalu/konsoli:
+npm install gulp --save-dev
+
+To polecenie powinno zainstalować pakiet z gulpem. Sprawdź poprawność instalacji wpisując:
+gulp -v
+
+Powinny pojawić się dwie linie: "CLI version", "Local version".
+
+Aby zamienić SCSS na CSS, stworzymy w pliku konfiguracji nowe zadanie. W tym celu musimy zainstalować odpowiednią paczkę.
+npm install sass gulp-sass --save-dev
+
+Sourcemaps czyli mapy kodu źródłowego informują przeglądarkę o tym, w której linii pliku Sass znajduje się źródło wygenerowanej deklaracji CSS.
+Znacznie ułatwia to debugowanie i edycję plików, gdyż struktura plików i kodu z reguły różni się między Sass a CSS.
+Aby w gulpie użyć sourcemaps, musimy doinstalować odpowiednią paczkę. Szukamy w necie paczki "gulp sourcemaps". Pokaże nam się strona https://www.npmjs.com/package/gulp-sourcemaps na którą wchodzimy. Instalujemy paczkę poleceniem:
+npm install gulp-sourcemaps --save-dev
+
+Czym jest autoprefixer? Jest to narzędzie, które pozwala zapomnieć nam o prefiksach dla różnych przeglądarkach. My tylko podajemy jakie przeglądarki interesują nas w danym projekcie, a autoprefixer do wynikowego kodu dodaje nam odpowiednie dopiski.
+
+Mechanizm ten istnieje też dla gulpa. Na stronie https://www.npmjs.com/package/gulp-autoprefixer mamy dokładną instrukcję instalacji. Ponownie - podobnie do poprzednich paczek - musimy wykonać kilka kroków.
+
+Instalujemy autoprefixer poleceniem:
+npm install gulp-autoprefixer --save-dev
+
+Paczka browser-sync pozwala nam na automatyczne przeładowywanie strony po wykryciu zmian w różnych plikach.
+
+Dzięki niej, nie musimy ręcznie odświeżać strony nad którą pracujemy. Wtyczka ta tworzy mały lokalny serwer we wskazanej lokalizacji i otwiera kartę przeglądarki dokładne w tym miejscu.
+
+Aby z niej skorzystać, musimy ją zainstalować:
+npm install browser-sync --save-dev
